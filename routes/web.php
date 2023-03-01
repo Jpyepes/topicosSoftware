@@ -17,3 +17,5 @@ Route::get('/form',"App\Http\Controllers\FilmDevelopOrderController@form")->name
 Route::post('/save',"App\Http\Controllers\FilmDevelopOrderController@save")->name('filmDevelopOrder.save');
 Route::get('/list',"App\Http\Controllers\FilmDevelopOrderController@list")->name('filmDevelopOrder.list');
 Route::get('/show/{id}',"App\Http\Controllers\FilmDevelopOrderController@show")->name('filmDevelopOrder.show');
+Route::get('/delete/{id}',"App\Http\Controllers\FilmDevelopOrderController@delete")->name('filmDevelopOrder.delete');
+

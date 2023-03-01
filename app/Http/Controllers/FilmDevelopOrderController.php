@@ -40,9 +40,13 @@ class FilmDevelopOrderController extends Controller
     {
         $viewData = [];
         $order = FilmDevelopOrder::findOrFail($id);
-        $viewData["title"] = $order["reference_film"];
-        $viewData["price"] = $order["price"];
         $viewData["order"] = $order;
         return view('filmDevelopOrder.show')->with("viewData", $viewData);
+    }
+    public function delete (string $id): \Illuminate\Http\RedirectResponse
+    {
+        $viewData = FilmDevelopOrder::findOrFail($id);
+        $viewData->delete();
+        return redirect()->action([FilmDevelopOrderController::class, 'index']);
     }
 }
